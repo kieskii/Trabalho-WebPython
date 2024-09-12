@@ -50,12 +50,21 @@ def dashboard():
 def new_task():
     form = TaskForm()
     if form.validate_on_submit():
-        task = Task(title=form.title.data, description=form.description.data, status=form.status.data, author=current_user)
+        # Define o assigned_user_id como None se o valor for vazio
+        assigned_user_id = form.assigned_user.data if form.assigned_user.data else None
+        task = Task(
+            title=form.title.data,
+            description=form.description.data,
+            status=form.status.data,
+            author=current_user,
+            assigned_user_id=assigned_user_id  # Atribui o usuário ou None
+        )
         db.session.add(task)
         db.session.commit()
         flash('Your task has been created!', 'success')
         return redirect(url_for('main.dashboard'))
     return render_template('tasks.html', form=form, legend='New Task')
+
 
 @main.route('/tasks/edit/<int:task_id>', methods=['GET', 'POST'])
 @login_required
@@ -68,16 +77,21 @@ def edit_task(task_id):
         form.title.data = task.title
         form.description.data = task.description
         form.status.data = task.status
+        form.assigned_user.data = task.assigned_user_id if task.assigned_user_id else ""
     
     if form.validate_on_submit():
         task.title = form.title.data
         task.description = form.description.data
         task.status = form.status.data
+        # Define o assigned_user_id como None se o valor for vazio
+        task.assigned_user_id = form.assigned_user.data if form.assigned_user.data else None
         db.session.commit()
         flash('Sua tarefa foi atualizada!', 'success')
         return redirect(url_for('main.dashboard'))
     
     return render_template('tasks.html', form=form, legend='Editar Tarefa')
+
+
 
 
 @main.route('/tasks/delete/<int:task_id>', methods=['GET', 'POST'])
