@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Bem-vindo ao Sistema de Tarefas{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-lg max-w-4xl w-full p-10 md:p-16">
+        <div class="text-center">
+            <h1 class="text-5xl font-extrabold text-gray-800">Gerencie Suas Tarefas com Facilidade</h1>
+            <p class="mt-6 text-lg text-gray-600">Organize, colabore e controle o progresso das suas tarefas de forma
+                simples e intuitiva.</p>
+        </div>
+
+        <div class="mt-10 flex justify-center space-x-8">
+            <div class="flex flex-col items-center">
+                <img src="https://img.icons8.com/?size=100&id=PY30kCSlBZIX&format=png&color=000000"
+                    alt="Tarefas organizadas" class="w-16 h-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mt-4">Organização</h3>
+                <p class="text-center text-gray-600 mt-2">Classifique e acompanhe suas tarefas com uma visão clara do
+                    progresso.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://img.icons8.com/external-flat-juicy-fish/64/000000/external-teamwork-business-strategy-flat-flat-juicy-fish.png"
+                    alt="Colaboração" class="w-16 h-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mt-4">Colaboração</h3>
+                <p class="text-center text-gray-600 mt-2">Compartilhe tarefas com sua equipe e trabalhem juntos para
+                    atingir os objetivos.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://img.icons8.com/?size=100&id=kJHg8g8cj90A&format=png&color=000000"
+                    alt="Progresso" class="w-16 h-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mt-4">Controle</h3>
+                <p class="text-center text-gray-600 mt-2">Monitore o status das suas tarefas para garantir que tudo está
+                    nos trilhos.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="{{ url_for('main.login') }}"
+                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors">Comece
+                Agora</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

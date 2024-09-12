@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este projeto tem como objetivo desenvolver uma aplicação web de gerenciamento de tarefas, inspirada no Trello. A aplicação permitirá que os usuários organizem suas tarefas, oferecendo funcionalidades como criar, editar, excluir e atribuir tarefas a outros usuários. Além disso, será possível acompanhar o status de cada tarefa, seja ela pendente, em andamento ou concluída.
+Este projeto tem como objetivo desenvolver uma aplicação web para gerenciamento de tarefas, inspirada no Trello. A aplicação permitirá que os usuários organizem suas tarefas com funcionalidades como criar, editar, excluir e atribuir tarefas. Além disso, será possível acompanhar o status de cada tarefa, seja ela pendente, em andamento ou concluída.
 
 ## Funcionalidades
 
@@ -24,9 +24,35 @@ Este projeto tem como objetivo desenvolver uma aplicação web de gerenciamento 
 
 ## Tecnologias Utilizadas
 
-- **Backend**: O sistema será desenvolvido utilizando os frameworks Flask ou Django.
-- **Banco de Dados**: Um banco de dados será implementado para armazenar as informações de usuários e tarefas.
-- **Autenticação**: A autenticação será aplicada para garantir que apenas usuários registrados possam acessar e gerenciar tarefas.
+- **Backend**: Flask
+- **Banco de Dados**: SQLAlchemy
+- **Autenticação**: Flask-Login
 - **Frontend**: 
-  - HTML e CSS serão utilizados para construir a interface.
-  - O Bootstrap poderá ser incorporado para criar uma interface mais atraente e minimamente responsiva.
+  - HTML e CSS
+  - Tailwind (para uma interface mais atraente e responsiva)
+
+## Instalação
+
+1. **Clone o Repositório**
+    https://github.com/kieskii/Trabalho-WebPython.git   
+    cd Trabalho-WebPython
+
+2. **Crie e Ative um Ambiente Virtual**
+   python -m venv venv
+   source venv/bin/activate
+
+3. **Instale as Dependências**
+   pip install -r requirements.txt
+
+4. **Configure o Banco de Dados**
+   flask db upgrade
+
+5. **Execute a Aplicação**
+   flask run
+
+   A aplicação estará disponível em `http://127.0.0.1:5000`.
+
+## Uso
+
+- **Cadastro e Login**: Acesse `/register` para criar uma nova conta e `/login` para autenticar-se.
+- **Gerenciamento de Tarefas**: Após o login, você pode acessar o dashboard para gerenciar suas tarefas e criar novas tarefas através da interface.

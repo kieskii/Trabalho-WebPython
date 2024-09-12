@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Registrar-se{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex flex-col justify-center bg-gray-100">
+  <div class="max-w-md w-full mx-auto bg-white p-8 border border-gray-300 rounded-lg">
+    <h2 class="text-3xl font-bold text-center text-gray-800">Registrar-se</h2>
+
+    <form method="POST" class="space-y-6">
+      {{ form.hidden_tag() }}
+      <div>
+        {{ form.username.label(class="text-gray-600") }}
+        {{ form.username(class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-600") }}
+      </div>
+      <div>
+        {{ form.email.label(class="text-gray-600") }}
+        {{ form.email(class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-600") }}
+      </div>
+      <div>
+        {{ form.password.label(class="text-gray-600") }}
+        {{ form.password(class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-600") }}
+      </div>
+      <div>
+        {{ form.confirm_password.label(class="text-gray-600") }}
+        {{ form.confirm_password(class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-600") }}
+      </div>
+      <div>
+        <button type="submit" class="w-full py-2 px-4 bg-green-600 hover:bg-green-700 text-white rounded-lg">
+          Registrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
